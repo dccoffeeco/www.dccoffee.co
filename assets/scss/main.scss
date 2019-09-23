@@ -1,0 +1,19 @@
+.v-btn.radius {
+  border-radius: 10px !important;
+}
+
+.v-btn.cta {
+  &::before {
+    transition: none;
+  }
+
+  &:hover {
+    color: #ffffff !important;
+
+    &::before {
+      background-color: #168c8d;
+      opacity: 1 !important;
+      border-radius: 4px;
+    }
+  }
+}
