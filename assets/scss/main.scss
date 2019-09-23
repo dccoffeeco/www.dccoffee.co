@@ -1,3 +1,5 @@
+@import '@/assets/variables.scss';
+
 .v-btn.radius {
   border-radius: 10px !important;
 }
@@ -15,5 +17,23 @@
       opacity: 1 !important;
       border-radius: 4px;
     }
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+h2 {
+  font-size: 2.125rem;
+}
+
+.img-cover {
+  background-color: $accent-color;
+
+  .v-image {
+    position: relative;
+    top: 15px;
+    left: 15px;
   }
 }

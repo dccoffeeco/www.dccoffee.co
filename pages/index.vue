@@ -62,6 +62,19 @@
             .quote-start.d-inline.d-md-block The world has enough&nbsp;
             .d-inline.d-md-block greatness, but not enough
           .emphasize(style="position:relative;top:8px;z-index:1;") goodness
+
+    v-row(no-gutters justify="center").mb-10
+      v-col(cols="11")
+        .coffee.d-flex
+          .coffee-pic.mr-12
+            .img-cover
+              v-img(src="/coffee-cup-tag.jpg" contain max-width="600")
+          .coffee-info
+            h2.mb-4 Specialty coffee
+            p Every cup of coffee we serve comes with a tag typed by hand on a 1946 Remington Rand typewriter.
+            p Every tag contains an upliftment message and we encourage you to keep it and place it on your rearview mirror, desk at work or fridge at home.
+
+            v-btn.cta.mt-4(x-large outlined color="#168c8d") About our coffee
 </template>
 
 <script>
@@ -145,19 +158,7 @@ export default {
   }
 }
 
-.mapouter {
-  position: relative;
-  text-align: right;
-  height: 270px;
-  width: 400px;
-}
-
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 270px;
-  width: 400px;
-  border-radius: 5px;
-  border: 1px solid #d3d3d3;
+.coffee-info {
+  font-size: 18px;
 }
 </style>

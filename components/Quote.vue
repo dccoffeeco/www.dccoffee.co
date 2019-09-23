@@ -12,7 +12,7 @@ export default {}
 @import '~vuetify/src/styles/settings/_variables.scss';
 
 .quote {
-  margin: 150px 0;
+  margin: 200px 0;
   font-family: 'Roboto Slab', sans-serif;
   font-size: 80px;
   font-weight: 700;
