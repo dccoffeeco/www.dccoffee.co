@@ -4,16 +4,18 @@
       v-col
         v-parallax(src="dc-main-banner.jpg" height="800")
           .tagline-wrapper.text-center
-            .tagline Your Place. Your Moment.
+            .tagline
+              .d-block.d-md-inline Your Place.&nbsp;
+              .d-block.d-md-inline Your Moment.
             .why
-              span.breakline.shop A non-profit coffee-shop
+              span.breakline.shop A non-profit coffee shop
               span.breakline.empowers that empowers individuals, transforms societies
               span.breakline.builds and builds leaders of the future.
 
-    v-row(justify="center")
+    v-row(no-gutters justify="center")
       v-col(cols="11")
-        .basic-info.pa-6.elevation-8.d-flex
-          .manifesto.pr-10
+        .basic-info.pa-6.elevation-8.d-block.d-md-flex
+          .manifesto.pr-10.pb-10
             .mb-6
               | Located in the heart of Fourways, DC Coffee Co. aims to be
               | a blessing to a community by promoting active citizenship,
@@ -23,21 +25,19 @@
 
             v-btn.cta(x-large outlined color="#168c8d") Our Manifesto
 
-          .map
-            .mapouter
-              .gmap_canvas
-                iframe(
-                  width="400"
-                  height="270"
-                  id="gmap_canvas"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.4108228159!2d28.011813314978834!3d-26.02011088352012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9576b20daf0ef3%3A0x4784fdf670438a9c!2sDC%20Coffee%20Co%20Fourways!5e0!3m2!1sen!2sza!4v1569240804062!5m2!1sen!2sza"
-                  frameborder="0"
-                  scrolling="no"
-                  marginheight="0"
-                  marginwidth="0"
-                  )
+          .map(:class="{'pb-5': $vuetify.breakpoint.mdAndDown, 'pr-6': $vuetify.breakpoint.mdAndUp}")
+            iframe(
+              :width="$vuetify.breakpoint.mdAndUp ? 400 : '100%'"
+              height="270"
+              id="gmap_canvas"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.4108228159!2d28.011813314978834!3d-26.02011088352012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9576b20daf0ef3%3A0x4784fdf670438a9c!2sDC%20Coffee%20Co%20Fourways!5e0!3m2!1sen!2sza!4v1569240804062!5m2!1sen!2sza"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              )
 
-          .address.pl-6.flex-grow-1
+          .address.flex-grow-1
             .physical
               | Cnr. Forest rd. & Sunset Boulevard,
               | Pineslopes, Fourways.
@@ -55,15 +55,13 @@
 
             .email hello@dccoffee.co
 
-    v-row(justify="center")
+    v-row(no-gutters justify="center")
       v-col(cols="11")
         quote
-          span(style="position:relative;z-index:1;")
-            | The world has enough
-            br
-            | greatness, but not enough
-            br
-          span.emphasize(style="position:relative;top:8px;z-index:0;") goodness
+          .text(style="position:relative;z-index:2;")
+            .quote-start.d-inline.d-md-block The world has enough&nbsp;
+            .d-inline.d-md-block greatness, but not enough
+          .emphasize(style="position:relative;top:8px;z-index:1;") goodness
 </template>
 
 <script>
@@ -81,20 +79,30 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/settings/_variables.scss';
+
 .tagline-wrapper {
   margin-top: -150px;
 
   .tagline {
-    font-family: 'Cookie';
+    font-family: 'Cookie', sans-serif;
     font-size: 90px;
     text-shadow: 0 1px 1px #666666;
+
+    @media (max-width: map_get($grid-breakpoints, 'md')) {
+      font-size: 60px;
+    }
   }
 
   .why {
     margin-top: 20px;
     font-size: 30px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', sans-serif;
     text-shadow: 0 1px 1px #666666;
+
+    @media (max-width: map_get($grid-breakpoints, 'md')) {
+      font-size: 24px;
+    }
 
     .breakline {
       display: block;
@@ -109,6 +117,10 @@ export default {
 
   .manifesto {
     width: 35%;
+
+    @media (max-width: map_get($grid-breakpoints, 'md')) {
+      width: 100%;
+    }
   }
 
   .address {
@@ -123,6 +135,13 @@ export default {
     .day {
       width: 100px;
     }
+  }
+}
+
+.map {
+  iframe {
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
   }
 }
 
