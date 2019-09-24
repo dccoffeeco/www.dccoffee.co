@@ -65,8 +65,8 @@
 
     v-row(no-gutters justify="center").mb-10
       v-col(cols="11")
-        .coffee.d-flex
-          .coffee-pic.mr-12
+        .coffee.d-block.d-md-flex
+          .coffee-pic(:class="{'mr-12': $vuetify.breakpoint.mdAndUp, 'mb-6 mr-4': $vuetify.breakpoint.mdAndDown}")
             .img-cover
               v-img(src="/coffee-cup-tag.jpg" contain max-width="600")
           .coffee-info
