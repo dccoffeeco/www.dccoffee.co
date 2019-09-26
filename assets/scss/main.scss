@@ -1,3 +1,4 @@
+@import '~vuetify/src/styles/settings/_variables.scss';
 @import '@/assets/variables.scss';
 
 .v-btn.radius {
@@ -61,5 +62,21 @@ a.underline {
 
   &:hover {
     background-image: linear-gradient(180deg, $accent-color 0, $accent-color);
+  }
+}
+
+.header {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  text-shadow: 0 0 15px #000000;
+
+  @media (max-width: map_get($grid-breakpoints, 'md')) {
+    font-size: 50px;
+  }
+
+  .highlight {
+    font-family: 'Kaushan Script', sans-serif;
+    color: $highlight-color;
   }
 }
