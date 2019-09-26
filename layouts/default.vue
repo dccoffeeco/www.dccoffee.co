@@ -26,7 +26,7 @@
           v-list-item-title {{ item.title }}
     v-content
       nuxt
-    v-footer(app absolute)
+    v-footer
       v-row(no-gutters justify="center")
         v-col(cols="11")
           .d-block.py-8.d-md-flex
@@ -48,11 +48,6 @@
                   nuxt-link(to="#") Team
                 li
                   nuxt-link(to="#") Financial Reports
-                li &nbsp;
-                li.sm &copy; 2019 DC COFFEE CO NPC
-                li.sm
-                  nuxt-link(to="#") Terms & Conditions
-                  nuxt-link(to="#") Privacy Policy
 
             .col.d-flex-shrink
               h4 Programs & Trainings
@@ -77,6 +72,12 @@
                   nuxt-link(to="#") Venue Hire
                 li
                   nuxt-link(to="#") Become a Resident
+                li &nbsp;
+                li &nbsp;
+                li.sm &copy; 2019 DC COFFEE CO NPC
+                li.sm
+                  nuxt-link(to="#") Terms & Conditions
+                  nuxt-link(to="#") Privacy Policy
 </template>
 
 <script>
@@ -115,6 +116,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/settings/_variables.scss';
+
 .v-content {
   padding-top: 0;
 }
@@ -145,6 +148,10 @@ export default {
 
   .col {
     width: 25%;
+
+    @media (max-width: map_get($grid-breakpoints, 'md')) {
+      width: 100%;
+    }
 
     h4 {
       margin-bottom: 15px;
