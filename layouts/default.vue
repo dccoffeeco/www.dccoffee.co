@@ -27,11 +27,66 @@
     v-content
       nuxt
     v-footer(app absolute)
-      span &copy; 2019
+      v-row(no-gutters justify="center")
+        v-col(cols="11")
+          .d-block.py-8.d-md-flex
+            .col.pr-6.d-flex-shrink
+              img(src="~/static/dc-coffee-co-logo.png" height="70")
+              .address.mt-6
+                address-schedule
+            .col.d-flex-shrink
+              h4 Coffee Shop
+
+              ul
+                li
+                  nuxt-link(to="#") Our Manifesto
+                li
+                  nuxt-link(to="#") Coffee
+                li
+                  nuxt-link(to="#") Menu
+                li
+                  nuxt-link(to="#") Team
+                li
+                  nuxt-link(to="#") Financial Reports
+                li &nbsp;
+                li.sm &copy; 2019 DC COFFEE CO NPC
+                li.sm
+                  nuxt-link(to="#") Terms & Conditions
+                  nuxt-link(to="#") Privacy Policy
+
+            .col.d-flex-shrink
+              h4 Programs & Trainings
+
+              ul
+                li
+                  nuxt-link(to="#") Volunteers
+                li
+                  nuxt-link(to="#") Future Generation
+                li
+                  nuxt-link(to="#") Corporate Trainings
+
+            .col.d-flex-shrink
+              h4 Community & Events
+
+              ul
+                li
+                  nuxt-link(to="#") Our Tenants
+                li
+                  nuxt-link(to="#") Event Calendar
+                li
+                  nuxt-link(to="#") Venue Hire
+                li
+                  nuxt-link(to="#") Become a Resident
 </template>
 
 <script>
+import AddressSchedule from '~/components/AddressSchedule.vue'
+
 export default {
+  components: {
+    AddressSchedule
+  },
+
   data() {
     return {
       title: 'DC Coffee Co.',
@@ -76,6 +131,53 @@ export default {
 
       &::before {
         opacity: 0 !important;
+      }
+    }
+  }
+}
+
+.v-footer {
+  $color: #dcdcdc;
+  background-color: #393939 !important;
+  color: $color !important;
+  font-size: 0.9rem;
+  font-weight: 300;
+
+  .col {
+    width: 25%;
+
+    h4 {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 0;
+      li {
+        list-style-type: none;
+        padding-bottom: 8px;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          transition: ease 0.2s;
+
+          &:hover {
+            color: darken($color, 20%);
+          }
+        }
+
+        &.sm {
+          font-size: 0.7rem;
+
+          a {
+            margin-right: 20px;
+            color: darken($color, 20%);
+
+            &:hover {
+              color: darken($color, 40%);
+            }
+          }
+        }
       }
     }
   }
