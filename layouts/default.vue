@@ -3,7 +3,7 @@
     v-app-bar(absolute flat height="130" color="rgba(0, 0, 0, 0)")
       img(src="~/static/dc-coffee-co-logo.png" height="100" class="mx-10")
       v-spacer
-      v-toolbar-items.d-none.d-md-block
+      v-toolbar-items.pr-9.d-none.d-md-block
         v-btn.basic.mx-3(
           v-for="item in menu"
           :key="item.title"

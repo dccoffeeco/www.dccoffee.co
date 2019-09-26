@@ -21,6 +21,7 @@ export default {}
   @media (max-width: map_get($grid-breakpoints, 'md')) {
     font-size: 40px;
     line-height: 47px;
+    margin: 100px 0;
   }
 
   .quote-start {
