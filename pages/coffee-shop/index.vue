@@ -6,7 +6,7 @@
           .header.text-center Coffee
             span.highlight &nbsp;Shop
 
-    v-row(no-gutters justify="center")
+    v-row.mb-12(no-gutters justify="center")
       v-col(:cols="$vuetify.breakpoint.mdAndUp ? 8 : 11")
         .manifesto
           h2.my-4 Our Manifesto
@@ -46,6 +46,86 @@
           v-carousel-item(src="/photos/003.jpg")
           v-carousel-item(src="/photos/004.jpg")
           v-carousel-item(src="/photos/005.jpg")
+
+    v-row.my-12(no-gutters justify="center")
+      v-col(cols="11")
+        h1.mb-6 Our Team
+
+        v-row
+          v-col(cols="12" md="3")
+            v-card.fill-height(outlined)
+              v-img(height="300" src="/team/neil.jpg")
+              v-card-title Neil Golding
+              v-card-text
+                .subheader.mb-5 HEAD OF STRATEGY & INNOVATION
+                p
+                  | Neil is an unshakable optimist, futurist and innovator.
+                  | He is in charge of our overarching mission and vision,
+                  | making the impossible possible and pushing everyone
+                  | to realize their full potential.
+
+          v-col(cols="0" md="1")
+
+          v-col(cols="12" md="3")
+            v-card.fill-height(outlined)
+              v-img(height="300" src="/team/mark.jpg")
+              v-card-title Mark Karimov
+              v-card-text
+                .subheader.mb-5 HEAD OF TECHNOLOGY & OPERATIONS
+                p
+                  | Mark brings order into our operations by building technology, setting up processes and
+                  | mobilizing people.
+                  | He is in charge of our volunteering programs, development of the open source tech solutions
+                  | and quality control of our products and offerings.
+
+          v-col(cols="0" md="1")
+
+          v-col(cols="12" md="3")
+            v-card.fill-height(outlined)
+              v-img(height="300" src="/team/lawrie.jpg")
+              v-card-title Lawrie Golding
+              v-card-text
+                .subheader.mb-5 HEAD OF PROGRAMS & PARTNERSHIPS
+                p
+                  | Lawrie is a Change Warrior, focused on strategic Purpose Based
+                  | interventions in Telecoms, FMCG, Customer Service Delivery and Event Management.
+                  | He is passionate about connecting people, changing lives and creating possibilities.
+
+    v-row.my-12(no-gutters justify="center")
+      v-col.pr-12(cols="11" md="7")
+        h1.mb-6 Our Story
+
+        v-timeline(align-top dense)
+          v-timeline-item(color="#168c8d")
+            template(v-slot:icon)
+              span.year 2017
+            v-card
+              v-card-text
+                | DC Coffee Co. opened its doors on a rustic-style farm in Riversands
+                | Johannesburg with a mission to serve and empower people. Home to an array of
+                | outdoor activities, food and craft vendors as well as the venue to some of the
+                | city's largest events.
+
+          v-timeline-item(color="#168c8d")
+            template(v-slot:icon)
+              span.year 2018
+            v-card
+              v-card-text
+                | DC Coffee moved to a Fourways area. With a space that can be morphed
+                | to accommodate up to 60 guests and that has a beautiful deck
+                | overlooking the new Fourways development, it’s a perfect spot for
+                | a cup of great coffee.
+
+          v-timeline-item(color="#168c8d")
+            template(v-slot:icon)
+              span.year 2019
+            v-card
+              v-card-text
+                | With a bold vision in mind, DC Coffee Co. transformed into a non-profit
+                | coffee-shop with a mission to empower individuals, transform societies
+                | and build the leaders of the future.
+      v-col(cols="11" md="4")
+        v-img(src="/history.png")
 </template>
 
 <script>
@@ -102,5 +182,11 @@ export default {}
       margin-left: -17px;
     }
   }
+}
+
+.year {
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: 500;
 }
 </style>
