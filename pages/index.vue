@@ -110,7 +110,7 @@
         .product-line.d-block.d-md-flex
           .product.flex-grow-1.mr-8.mb-12
             .product-holder
-              v-img(src="/product-lunch-unboxed.jpg" contain max-width="300")
+              v-img(src="/product-panini.jpg" contain max-width="300")
               .product-info.pt-4.pr-8
                 h3.mb-3 The Lunch UnBoxed
                 p Make your own sandwich, wrap or salad and enjoy your lunch with our fresh organic ingredients chopped and prepped in-store every day.
@@ -155,10 +155,75 @@
                     v-expansion-panel
                       v-expansion-panel-header FRUIT CRUSHES
                       v-expansion-panel-content
-                        v-simple-table
+                        v-simple-table.mt-4
                           template(v-slot:default)
                             tbody
                               tr(v-for="item in menuFruitCrushes" :key="item.name")
+                                td
+                                  div {{ item.name }}
+                                  div.sub(v-if="item.sub") {{ item.sub }}
+                                td
+                                td R{{ item.price }}
+
+                    v-expansion-panel
+                      v-expansion-panel-header CRAFT ICE TEAS
+                      v-expansion-panel-content
+                        v-simple-table.mt-4
+                          template(v-slot:default)
+                            tbody
+                              tr(v-for="item in menuCraftIceTeas" :key="item.name")
+                                td
+                                  div {{ item.name }}
+                                  div.sub(v-if="item.sub") {{ item.sub }}
+                                td
+                                td R{{ item.price }}
+
+                    v-expansion-panel
+                      v-expansion-panel-header FREEZOS
+                      v-expansion-panel-content
+                        v-simple-table.mt-4
+                          template(v-slot:default)
+                            tbody
+                              tr(v-for="item in menuFreezos" :key="item.name")
+                                td
+                                  div {{ item.name }}
+                                  div.sub(v-if="item.sub") {{ item.sub }}
+                                td
+                                td R{{ item.price }}
+
+                    v-expansion-panel
+                      v-expansion-panel-header MILKSHAKES
+                      v-expansion-panel-content
+                        v-simple-table.mt-4
+                          template(v-slot:default)
+                            tbody
+                              tr(v-for="item in menuMilkshakes" :key="item.name")
+                                td
+                                  div {{ item.name }}
+                                  div.sub(v-if="item.sub") {{ item.sub }}
+                                td
+                                td R{{ item.price }}
+
+                    v-expansion-panel
+                      v-expansion-panel-header EATS
+                      v-expansion-panel-content
+                        v-simple-table.mt-4
+                          template(v-slot:default)
+                            tbody
+                              tr(v-for="item in menuEats" :key="item.name")
+                                td
+                                  div {{ item.name }}
+                                  div.sub(v-if="item.sub") {{ item.sub }}
+                                td
+                                td R{{ item.price }}
+
+                    v-expansion-panel
+                      v-expansion-panel-header DESSERTS
+                      v-expansion-panel-content
+                        v-simple-table.mt-4
+                          template(v-slot:default)
+                            tbody
+                              tr(v-for="item in menuDesserts" :key="item.name")
                                 td
                                   div {{ item.name }}
                                   div.sub(v-if="item.sub") {{ item.sub }}
@@ -345,6 +410,117 @@ export default {
         {
           name: 'Lemonade',
           price: 28
+        }
+      ],
+      menuCraftIceTeas: [
+        {
+          name: 'Berry',
+          price: 25
+        },
+        {
+          name: 'Peach',
+          price: 25
+        },
+        {
+          name: 'Lemon',
+          price: 25
+        }
+      ],
+      menuFreezos: [
+        {
+          name: 'Freezoccino',
+          price: 35
+        },
+        {
+          name: 'Chocolate Freezo',
+          price: 32
+        },
+        {
+          name: 'Chai Freezo',
+          price: 35
+        },
+        {
+          name: 'Mocha Freezo',
+          price: 37
+        }
+      ],
+      menuMilkshakes: [
+        {
+          name: 'Chocolate',
+          price: 35
+        },
+        {
+          name: 'Salted Caramel',
+          price: 35
+        },
+        {
+          name: 'Vanilla',
+          price: 35
+        },
+        {
+          name: 'Strawberry',
+          price: 35
+        },
+        {
+          name: 'Lime',
+          price: 35
+        }
+      ],
+      menuEats: [
+        {
+          name: 'Jaffle',
+          sub: 'Mince / Chicken / Cheese',
+          price: 30
+        },
+        {
+          name: 'Toasted Sandwich',
+          sub: 'Cheese & Tomato / Chicken Mayo / Ham, Cheese & Tomato',
+          price: 30
+        },
+        {
+          name: 'Wrap',
+          sub: 'Roasted chicken mayo / BBQ pulled pork, slaw, sesame',
+          price: 45
+        },
+        {
+          name: 'Panini',
+          sub: 'Fajita chicken / Basil pesto chicken',
+          price: 55
+        },
+        {
+          name: 'Salad',
+          sub: 'Thai chicken noodle / Pesto chicken pasta',
+          price: 45
+        }
+      ],
+      menuDesserts: [
+        {
+          name: 'Nutella Cheesecake',
+          price: 30
+        },
+        {
+          name: 'Chocolate brownie',
+          price: 20
+        },
+        {
+          name: 'Vanilla Fudge',
+          price: 15
+        },
+        {
+          name: 'Caramel Nut Fudge',
+          price: 20
+        },
+        {
+          name: 'Chocolate Cake',
+          price: 25
+        },
+        {
+          name: 'Carrot Cake',
+          price: 30
+        },
+        {
+          name: 'Lemon Meringue',
+          price: 20
         }
       ]
     }

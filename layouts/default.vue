@@ -14,7 +14,7 @@
           max-height="50"
           exact
           ) {{ item.title }}
-        v-btn.radius(outlined color="#FFFFFF" max-height="50" class="mx-3") Become a resident
+        v-btn.radius(outlined color="#FFFFFF" max-height="50" class="mx-3") Get involved
       v-app-bar-nav-icon.d-block.d-md-none.mr-4(@click.stop="navigationDrawer = !navigationDrawer" color="#FFFFFF" x-large)
     v-navigation-drawer(v-model="navigationDrawer" right temporary app)
       v-list-item(
@@ -105,14 +105,6 @@ export default {
           to: {
             name: 'programs'
           }
-        },
-        {
-          title: 'Community',
-          to: '#'
-        },
-        {
-          title: 'Login / Sign up',
-          to: '#'
         }
       ]
     }
