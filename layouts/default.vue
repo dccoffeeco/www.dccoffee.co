@@ -102,7 +102,9 @@ export default {
         },
         {
           title: 'Programs',
-          to: '#'
+          to: {
+            name: 'programs'
+          }
         },
         {
           title: 'Community',

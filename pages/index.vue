@@ -23,7 +23,7 @@
               | and working with its customers and volunteers to build
               | a safer, healthier environment for all.
 
-            v-btn.cta(x-large outlined color="#168c8d") Our Manifesto
+            v-btn.cta(:to="{name: 'coffee-shop'}" nuxt x-large outlined color="#168c8d") Our Manifesto
 
           .map(:class="{'pb-5': $vuetify.breakpoint.mdAndDown, 'pr-6': $vuetify.breakpoint.mdAndUp}")
             iframe(
@@ -53,13 +53,41 @@
         .dual.d-block.d-md-flex
           .dual-pic(:class="{'mr-12': $vuetify.breakpoint.mdAndUp, 'mb-6 mr-4': $vuetify.breakpoint.mdAndDown}")
             .img-cover
-              v-img(src="/coffee-cup-tag.jpg" contain max-width="600")
+              v-img(src="/coffee/coffee_003.jpg" contain max-width="600")
           .dual-info.pt-6
             h2.mb-4 Specialty coffee
-            p Every cup of coffee we serve comes with a tag typed by hand on a 1946 Remington Rand typewriter.
-            p Every tag contains an upliftment message and we encourage you to keep it and place it on your rearview mirror, desk at work or fridge at home.
+            p
+              | We work with the top "direct fair trade" micro-roasters in South Africa to bring you the best
+              | specialty coffee in the country. Our current all-time favourite Tanzania/Brazil blend will
+              | leave you wanting more and more.
+            p
+              | Every cup of coffee we serve comes with a tag typed by hand on a 1946 Remington Rand typewriter.
+              | Each tag contains an upliftment message and we encourage you to keep it and place it on your rearview mirror, desk at work or fridge at home.
 
-            v-btn.cta.mt-4(x-large outlined color="#168c8d") About our coffee
+            v-btn.cta.mt-4(
+              x-large
+              outlined
+              color="#168c8d"
+              @click.stop="dialogAboutCoffee = true"
+              ) About our coffee
+
+            v-dialog(v-model="dialogAboutCoffee" max-width="600")
+              v-card
+                v-carousel(height="300" hide-delimiters)
+                  v-carousel-item(src="/coffee/coffee_004.jpg")
+                  v-carousel-item(src="/coffee/coffee_005.jpg")
+                  v-carousel-item(src="/coffee/coffee_002.jpg")
+                v-card-title About our coffee
+                v-card-text
+                  P
+                    | Ethically sourced from the farms in Tanzania and Brazil,
+                    | our current all-favourite coffee beans have been roasted to medium with love
+                    | by our favourite micro-roastery in Centurion.
+                  p
+                    | Expect soft nutty undertones with a cocoa finish in every sip you take.
+                  p
+                    | We recommend it as a Flat White or Cortado, but it also goes down really
+                    | well when brewed in V60 or Chemex.
 
     v-row(no-gutters justify="center").mb-10
       v-col(cols="11")
@@ -92,7 +120,50 @@
               p Organic ice teas, hot teas and fresh juices - check!
               p Freshly baked cakes and pastries - check!
               p All profit to empower the community - check!
-            v-btn.cta.mt-4(x-large outlined color="#168c8d") See full menu
+            v-btn.cta.mt-4(
+              x-large
+              outlined
+              color="#168c8d"
+              @click.stop="dialogFullMenu = true"
+              ) See full menu
+
+            v-dialog(v-model="dialogFullMenu" max-width="600")
+              v-card
+                v-card-title Our Menu
+                v-card-text
+                  v-expansion-panels(focusable)
+                    v-expansion-panel
+                      v-expansion-panel-header HOT DRINKS
+                      v-expansion-panel-content
+                        v-simple-table
+                          template(v-slot:default)
+                            thead
+                              tr
+                                th
+                                th
+                                th Small/Single
+                                th Medium/Double
+                            tbody
+                              tr(v-for="item in menuHotDrinks" :key="item.name")
+                                td
+                                  div {{ item.name }}
+                                  div.sub(v-if="item.sub") {{ item.sub }}
+                                td
+                                td {{ item.price1 ? 'R' + item.price1 : '' }}
+                                td {{ item.price2 ? 'R' + item.price2 : '' }}
+
+                    v-expansion-panel
+                      v-expansion-panel-header FRUIT CRUSHES
+                      v-expansion-panel-content
+                        v-simple-table
+                          template(v-slot:default)
+                            tbody
+                              tr(v-for="item in menuFruitCrushes" :key="item.name")
+                                td
+                                  div {{ item.name }}
+                                  div.sub(v-if="item.sub") {{ item.sub }}
+                                td
+                                td R{{ item.price }}
 
     v-row(no-gutters justify="center")
       v-col(cols="11")
@@ -184,11 +255,104 @@ export default {
   components: {
     Quote,
     AddressSchedule
+  },
+
+  data() {
+    return {
+      dialogAboutCoffee: false,
+      dialogFullMenu: false,
+      menuHotDrinks: [
+        {
+          name: 'Espresso',
+          price1: 17,
+          price2: 20
+        },
+        {
+          name: 'Flat White',
+          price1: 25,
+          price2: null
+        },
+        {
+          name: 'Cappuccino',
+          price1: 23,
+          price2: 27
+        },
+        {
+          name: 'Americano',
+          price1: 20,
+          price2: 23
+        },
+        {
+          name: 'Latte',
+          price1: 24,
+          price2: 28
+        },
+        {
+          name: 'Cortado',
+          price1: 19,
+          price2: 22
+        },
+        {
+          name: 'Macchiato',
+          price1: 18,
+          price2: 21
+        },
+        {
+          name: 'Mocha',
+          price1: 28,
+          price2: 32
+        },
+        {
+          name: 'Hot Chocolate',
+          price1: 25,
+          price2: 29
+        },
+        {
+          name: 'Chai Latte',
+          price1: 27,
+          price2: 30
+        },
+        {
+          name: 'Red Cappuccino',
+          price1: 25,
+          price2: 29
+        },
+        {
+          name: 'Babyccino',
+          price1: 5,
+          price2: null
+        },
+        {
+          name: 'Tea',
+          sub: 'Five Roses, Rooibos, Green, Earl Grey',
+          price1: null,
+          price2: 20
+        }
+      ],
+      menuFruitCrushes: [
+        {
+          name: 'Mixed Berry',
+          price: 30
+        },
+        {
+          name: 'Mango',
+          price: 30
+        },
+        {
+          name: 'Passion Fruit',
+          price: 28
+        },
+        {
+          name: 'Lemonade',
+          price: 28
+        }
+      ]
+    }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~vuetify/src/styles/settings/_variables.scss';
 @import '@/assets/variables.scss';
 
@@ -295,5 +459,15 @@ export default {
       }
     }
   }
+}
+
+.dots {
+  border-bottom: 1px dotted #999999;
+}
+
+.sub {
+  font-size: 12px;
+  line-height: 14px;
+  color: #666666;
 }
 </style>

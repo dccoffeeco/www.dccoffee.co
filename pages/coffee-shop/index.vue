@@ -123,7 +123,7 @@
               v-card-text
                 | With a bold vision in mind, DC Coffee Co. transformed into a non-profit
                 | coffee-shop with a mission to empower individuals, transform societies
-                | and build the leaders of the future.
+                | and build leaders of the future.
       v-col(cols="11" md="4")
         v-img(src="/history.png")
 </template>
@@ -132,7 +132,7 @@
 export default {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/assets/variables.scss';
 @import '~vuetify/src/styles/settings/_variables.scss';
 
