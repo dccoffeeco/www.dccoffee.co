@@ -41,7 +41,14 @@
                 v-icon mdi-currency-usd
                 span.icon-text Free
 
-            v-btn.cta.mt-4(x-large outlined color="#168c8d") Participate
+            v-btn.typeform-share.button.cta.mt-4(
+              x-large
+              outlined
+              color="#168c8d"
+              href="https://dccoffee.typeform.com/to/Rn7bCn"
+              data-mode="popup"
+              target="_blank"
+              ) Participate
 
     v-row(no-gutters justify="center").mb-10
       v-col(cols="11")
@@ -72,7 +79,14 @@
                 v-icon mdi-currency-usd
                 span.icon-text Free
 
-            v-btn.cta.mt-4(x-large outlined color="#168c8d") Participate
+            v-btn.typeform-share.button.cta.mt-4(
+              x-large
+              outlined
+              color="#168c8d"
+              href="https://dccoffee.typeform.com/to/Rn7bCn"
+              data-mode="popup"
+              target="_blank"
+              ) Participate
 
     v-row(no-gutters justify="center").mb-10
       v-col(cols="11")
@@ -103,7 +117,14 @@
                 v-icon mdi-currency-usd
                 span.icon-text R200 pp
 
-            v-btn.cta.mt-4(x-large outlined color="#168c8d") Participate
+            v-btn.typeform-share.button.cta.mt-4(
+              x-large
+              outlined
+              color="#168c8d"
+              href="https://dccoffee.typeform.com/to/Rn7bCn"
+              data-mode="popup"
+              target="_blank"
+            ) Participate
 
     v-row(no-gutters justify="center").mb-10
       v-col(cols="11")
@@ -134,7 +155,14 @@
                 v-icon mdi-currency-usd
                 span.icon-text R200 pp
 
-            v-btn.cta.mt-4(x-large outlined color="#168c8d") Participate
+            v-btn.typeform-share.button.cta.mt-4(
+              x-large
+              outlined
+              color="#168c8d"
+              href="https://dccoffee.typeform.com/to/Rn7bCn"
+              data-mode="popup"
+              target="_blank"
+            ) Participate
 
     v-row(no-gutters justify="center").mb-10
       v-col(cols="11")
@@ -165,7 +193,14 @@
                 v-icon mdi-currency-usd
                 span.icon-text Free
 
-            v-btn.cta.mt-4(x-large outlined color="#168c8d") Participate
+            v-btn.typeform-share.button.cta.mt-4(
+              x-large
+              outlined
+              color="#168c8d"
+              href="https://dccoffee.typeform.com/to/Rn7bCn"
+              data-mode="popup"
+              target="_blank"
+            ) Participate
 
     v-row(no-gutters justify="center").mb-10
       v-col(cols="11")
@@ -196,7 +231,14 @@
                 v-icon mdi-currency-usd
                 span.icon-text Custom
 
-            v-btn.cta.mt-4(x-large outlined color="#168c8d") Enquire
+            v-btn.typeform-share.button.cta.mt-4(
+              x-large
+              outlined
+              color="#168c8d"
+              href="https://dccoffee.typeform.com/to/Rn7bCn"
+              data-mode="popup"
+              target="_blank"
+            ) Enquire
 
     v-row(no-gutters justify="center").mb-10
       v-col(cols="11")

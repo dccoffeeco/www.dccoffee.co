@@ -1,5 +1,8 @@
 <template lang="pug">
   v-app
+    script.
+      (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
+
     v-app-bar(absolute flat height="130" color="rgba(0, 0, 0, 0)")
       nuxt-link(to="/")
         img(src="~/static/dc-coffee-co-logo.png" height="100" class="mx-10")
@@ -14,7 +17,14 @@
           max-height="50"
           exact
           ) {{ item.title }}
-        v-btn.radius(outlined color="#FFFFFF" max-height="50" class="mx-3") Get involved
+        v-btn.typeform-share.button.radius.mx-3(
+          outlined
+          color="#FFFFFF"
+          max-height="50"
+          href="https://dccoffee.typeform.com/to/Rn7bCn"
+          data-mode="popup"
+          target="_blank"
+        ) Get involved
       v-app-bar-nav-icon.d-block.d-md-none.mr-4(@click.stop="navigationDrawer = !navigationDrawer" color="#FFFFFF" x-large)
     v-navigation-drawer(v-model="navigationDrawer" right temporary app)
       v-list-item(
